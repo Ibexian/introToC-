@@ -1,0 +1,1 @@
+int guessAndRespond(int answer);
