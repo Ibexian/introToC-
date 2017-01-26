@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <stdio.h>
 using namespace std;
 
 int guessAndRespond(int answer) {
@@ -15,4 +17,8 @@ int guessAndRespond(int answer) {
   }
   cout << endl;
   return guess;
+}
+
+string hello() {
+  return "Hello, world!\n";
 }
