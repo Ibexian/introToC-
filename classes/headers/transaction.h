@@ -7,6 +7,6 @@ private:
 
 public:
   transaction(int amt, std::string kind);
-  std::string report();
+  std::string report() const;
 
 };

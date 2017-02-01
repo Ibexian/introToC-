@@ -9,8 +9,8 @@ private:
   std::vector<transaction> log;
 public:
   account();
-  std::vector<std::string> report();
+  std::vector<std::string> report() const;
   bool deposit(int amt);
   bool withdraw(int amt);
-  int getBalance(){return balance;};
+  int getBalance() const {return balance;};
 };

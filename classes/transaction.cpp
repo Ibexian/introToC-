@@ -6,7 +6,7 @@ transaction::transaction(int amt, std::string kind):amount(amt),type(kind)
 {
 
 }
-string transaction::report() {
+string transaction::report() const{
   string report;
   report += "   " + type + " " + to_string(amount);
   return report;

@@ -6,7 +6,7 @@ account::account():balance(0){
 
 }
 
-vector<string> account::report() {
+vector<string> account::report() const {
   vector<string> report;
   report.push_back("Balance is " + to_string(balance));
   report.push_back("Transactions: ");

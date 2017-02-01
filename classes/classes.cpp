@@ -5,7 +5,8 @@ using namespace std;
 
 int main() {
   account a1;
-  a1.deposit(90);
+  const int ammount = 90;
+  a1.deposit(ammount);
   cout << "After deposting $90, balance is $" << a1.getBalance() << endl;
   for(auto s:a1.report()) {
     cout << s << endl;
