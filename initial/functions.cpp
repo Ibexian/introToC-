@@ -18,7 +18,3 @@ int guessAndRespond(int answer) {
   cout << endl;
   return guess;
 }
-
-string hello() {
-  return "Hello, world!\n";
-}
