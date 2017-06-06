@@ -4,10 +4,14 @@
 
 Person::Person (std::string first, std::string last, int agenum) : firstname(first), lastname(last), age(agenum)
 {
-  std::cout << "Constructing " << firstname << " " << lastname << '\n';
+  std::cout << "Constructing " << GetName() << '\n';
 }
 
 Person::~Person ()
 {
-    std::cout << "Destructing " << firstname << " " << lastname << '\n';
+    std::cout << "Destructing " << GetName() << '\n';
+}
+
+std::string Person::GetName() {
+  return firstname + " " + lastname;
 }

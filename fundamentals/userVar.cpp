@@ -10,5 +10,6 @@ int main(int argc, char const *argv[]) {
   Level l = Beginner;
 
   std::cout << d1.report() << " : "<< l << '\n';
+  std::cout << p1.GetName() << " : " << p1.GetNumber() << '\n';
   return 0;
 }

@@ -35,6 +35,15 @@
     function loadWebAssembly(filename, imports) {
       var wasmFile = filename + ".wasm";
       var wasmReader = filename + ".js";
+      var buttonBind = function(instance){
+          var button = document.getElementById('run');
+          button.value = 'Is it prime?';
+          button.addEventListener('click', function(){
+            var testNum = Number.parseInt(document.getElementById('testNum').value, 10);
+            var primeCheck = Module.isPrime(testNum);
+            Module.print(`${testNum.toString()} is ${primeCheck ? '' : 'not'} prime`);
+          }, false);
+      }
 
         var xhr = new XMLHttpRequest();
         xhr.open('GET', wasmFile, true);
@@ -44,14 +53,18 @@
           var script = document.createElement('script');
           script.src = wasmReader;
           document.body.appendChild(script);
+          buttonBind(Module);
         };
         xhr.send(null);
     }
     // Main part of this example, loads the module and uses it.
-    loadWebAssembly('uservar');
+    loadWebAssembly('prime');
   </script>
 </head>
 <body>
+  <input type="number" value="3" id="testNum"/>
+  <input type="button" id="run" value="(waiting for WebAssembly)"/>
   <div id="output"></div>
+  <h4>em++ -o hello.js --bind --std=c++11 -s WASM=1 hello.cpp</h4>
 </body>
 </html>
