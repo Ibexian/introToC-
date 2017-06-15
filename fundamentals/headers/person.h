@@ -15,5 +15,9 @@ public:
   std::string GetName();
   int GetNumber() {return age;}
   void SetNumber(int number) {age = number;}
+  bool operator<(Person& p);
+  bool operator<(int i);
 };
+
+bool operator<(int i, Person& p);
 #endif

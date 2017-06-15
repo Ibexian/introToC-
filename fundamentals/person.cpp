@@ -15,3 +15,15 @@ Person::~Person ()
 std::string Person::GetName() {
   return firstname + " " + lastname;
 }
+
+bool Person::operator<(Person& p) {
+  return age < p.age;
+}
+
+bool Person::operator<(int i) {
+  return age < i;
+}
+
+bool operator<(int i, Person& p) {
+  return i < p.GetNumber();
+}
