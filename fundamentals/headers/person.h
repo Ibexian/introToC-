@@ -11,7 +11,6 @@ public:
   Person(std::string first,
     std::string last,
     int agenum);
-  ~Person();
   std::string GetName();
   int GetNumber() {return age;}
   void SetNumber(int number) {age = number;}
