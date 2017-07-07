@@ -11,12 +11,12 @@ public:
   Person(std::string first,
     std::string last,
     int agenum);
-  std::string GetName();
-  int GetNumber() {return age;}
+  std::string GetName() const;
+  int GetNumber() const {return age;}
   void SetNumber(int number) {age = number;}
-  bool operator<(Person& p);
-  bool operator<(int i);
+  bool operator<(const Person& p) const;
+  bool operator<(int i) const;
 };
 
-bool operator<(int i, Person& p);
+bool operator<(int i, const Person& p);
 #endif
