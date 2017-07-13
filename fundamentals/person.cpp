@@ -6,6 +6,8 @@ Person::Person (std::string first, std::string last, int agenum) : firstname(fir
 {
 }
 
+Person::~Person(){};
+
 std::string Person::GetName() const {
   return firstname + " " + lastname;
 }

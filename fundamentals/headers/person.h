@@ -11,9 +11,11 @@ public:
   Person(std::string first,
     std::string last,
     int agenum);
-  std::string GetName() const;
+  virtual ~Person();
+  virtual std::string GetName() const;
   int GetNumber() const {return age;}
   void SetNumber(int number) {age = number;}
+  void SetFirstName(std::string first) {firstname = first;}
   bool operator<(const Person& p) const;
   bool operator<(int i) const;
 };

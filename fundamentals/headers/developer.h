@@ -12,5 +12,6 @@ public:
     int agenum,
     std::string lang);
   ~Developer();
+  std::string GetName() const;
   std::string report() const;
 };

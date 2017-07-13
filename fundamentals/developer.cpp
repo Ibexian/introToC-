@@ -16,3 +16,7 @@ Developer::~Developer(){
 std::string Developer::report() const{
   return language;
 }
+
+std::string Developer::GetName() const {
+  return Person::GetName() + " " + language;
+}
