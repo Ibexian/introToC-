@@ -5,10 +5,6 @@
 #include <algorithm>
 #include "headers/person.h"
 
-void print(int i) {
-  std::cout << i << " ";
-}
-
 bool odd(int i) {
   return i%2;
 }
@@ -72,7 +68,7 @@ int main(int argc, char const *argv[]) {
   std::cout << "------------------------" << '\n';
 
   std::cout << "contents of v: ";
-  std::for_each(v.begin(), v.end(), print);
+  std::for_each(v.begin(), v.end(), [](int i) { std::cout << i << " "; });
 
   std::cout << "odd elements of v: ";
   auto o = find_if(v.begin(), v.end(), odd);
@@ -85,7 +81,7 @@ int main(int argc, char const *argv[]) {
 
   std::cout << "contents of v: ";
   std::sort(v.begin(), v.end());
-  std::for_each(v.begin(), v.end(), print);
+  std::for_each(v.begin(), v.end(), [](int i) { std::cout << i << " "; });
 
   std::cout << '\n' << "------------------" << '\n';
 
