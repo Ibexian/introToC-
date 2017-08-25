@@ -1,9 +1,13 @@
 
 #include "headers/person.h"
 #include <iostream>
+#include <exception>
 
 Person::Person (std::string first, std::string last, int agenum) : firstname(first), lastname(last), age(agenum)
 {
+  if (age == 0) {
+    throw std::invalid_argument("Age number for Person cannot be zero.");
+  }
 }
 
 Person::~Person(){};
