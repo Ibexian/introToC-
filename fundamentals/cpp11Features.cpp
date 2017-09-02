@@ -10,10 +10,7 @@ auto square(X x) -> decltype(x * x) {
 
 int main(int argc, char const *argv[]) {
 
-  std::vector<int> v;
-  for(int i = 0; i < 10; i++) {
-    v.push_back(i);
-  }
+  std::vector<int> v {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
   auto logger = [](const int num){std::cout << num << '\n';};
   for_each(v.begin(), v.end(), logger);
@@ -54,7 +51,16 @@ int main(int argc, char const *argv[]) {
     x = fibonacci(x);
   });
 
-  for_each(v.begin(), v.end(), logger);
+  //logging with range based for loops
+  for (auto elem : v) {
+    std::cout << elem << '\n';
+  }
+
+  //unicode support and literals
+  std::string emoji(u8"\u262D");
+  std::cout << emoji << " is now available" << '\n';
+  std::cout << emoji << R"( and then \n)" << '\n';
+  std::cout << R"###( "(raw strings with custom delimeters)" )###" << '\n';
 
   return 0;
 }
